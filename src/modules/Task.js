@@ -6,19 +6,21 @@ export default class Task {
     this.index = index;
 }
 
-set description(newDescription) {
+set setDescription(newDescription = '') {
+    if (!newDescription) return;
     this.description = newDescription;
     }
-    set completed(newCompleted) {
+set setCompleted(newCompleted) {
     this.completed = newCompleted;
     }
-    set index(newIndex) {
+set setIndex(newIndex = 0) {
+    if (typeof newIndex !== 'number' || newIndex < 0) return;
     this.index = newIndex;
     }
-    get description() {
+get description() {
     return this.description;
     }
-    get completed() {
+get getCompleted() {
     return this.completed;
     }
     get index() {
