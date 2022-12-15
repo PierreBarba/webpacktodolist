@@ -18,8 +18,8 @@ jobs:
         run: npm install -g @lhci/cli@0.7.x
       - name: Lighthouse Report
         run: lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=.
-        webhint:
-    name: Webhint
+webhint:
+  name: Webhint
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
@@ -32,8 +32,8 @@ jobs:
           [ -f .hintrc ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css-js/.hintrc
       - name: Webhint Report
         run: npx hint .
-  stylelint:
-    name: Stylelint
+stylelint:
+  name: Stylelint
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
@@ -46,8 +46,8 @@ jobs:
           [ -f .stylelintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css-js/.stylelintrc.json
       - name: Stylelint Report
         run: npx stylelint "**/*.{css,scss}"
-        eslint:
-    name: ESLint
+eslint:
+  name: ESLint
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
@@ -60,8 +60,8 @@ jobs:
           [ -f .eslintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css-js/.eslintrc.json
       - name: ESLint Report
         run: npx eslint .
-  nodechecker:
-    name: node_modules checker
+nodechecker:
+  name: node_modules checker
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
