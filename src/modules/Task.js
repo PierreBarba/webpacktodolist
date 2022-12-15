@@ -1,7 +1,6 @@
 export default class Task {
   constructor(description = '', index = 0) {
     this.description = description;
-    this.description = description;
     this.completed = false;
     this.index = index;
   }
@@ -20,7 +19,7 @@ export default class Task {
     this.index = newIndex;
   }
 
-  get description() {
+  get getDescription() {
     return this.description;
   }
 
@@ -28,7 +27,7 @@ export default class Task {
     return this.completed;
   }
 
-  get index() {
+  get getIndex() {
     return this.index;
   }
 
