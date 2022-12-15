@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Capton Project] <a name="Awesome book ES6"></a>
+# 📖 [Capton Project] <a name="Todo List"></a>
 
 
 **[Personal Portfolio Pierre]** is a...
@@ -39,8 +39,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[dinamic]**
-- **[wireframe]**
+- **[dawesome]**
+- **[webpack]**
 - **[functional]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
