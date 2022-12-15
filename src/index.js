@@ -5,13 +5,16 @@ import createTaskDOM from './modules/taskEvents.js';
 import * as storage from './modules/localStorageFunctions.js';
 
 const toDoList = new ToDoList();
-toDoList.addTask(new Task('task 1', 3));
-toDoList.addTask(new Task('task 2', 2));
-toDoList.addTask(new Task('task 3', 1));
-toDoList.addTask(new Task('task 4', 0));
-const taskList = document.querySelector('.to-do-list');
 
 toDoList.taskList = storage.load('tasks');
+
+// test variables if the list is empty
+// toDoList.addTask(new Task('task 1', 3));
+// toDoList.addTask(new Task('task 2', 2));
+// toDoList.addTask(new Task('task 3', 1));
+// toDoList.addTask(new Task('task 4', 0));
+
+const taskList = document.querySelector('.to-do-list');
 
 function populateList(emptyList) {
   emptyList.sortTasks();
@@ -24,7 +27,6 @@ function populateList(emptyList) {
 
 populateList(toDoList);
 storage.save('tasks', toDoList.taskList);
-
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -36,7 +38,6 @@ form.addEventListener('submit', (e) => {
   toDoList.addTask(newTask);
   storage.save('tasks', toDoList.taskList);
 });
-
 const checkboxes = document.querySelectorAll('.checkbox');
 checkboxes.forEach((box) => {
   box.addEventListener('change', () => {
@@ -44,7 +45,6 @@ checkboxes.forEach((box) => {
     toDoList.taskList[boxIndex].completed = !toDoList.taskList[boxIndex].completed;
   });
 });
-
 const clearAll = document.querySelector('.clear-all');
 clearAll.addEventListener('click', () => {
   toDoList.removeCompleted();
@@ -55,4 +55,19 @@ clearAll.addEventListener('click', () => {
     }
   }
   storage.save('tasks', toDoList.taskList);
+});
+const trashCans = document.querySelectorAll('#trash');
+trashCans.forEach((bin) => {
+  bin.addEventListener('click', () => {
+    const index = (Array.prototype.indexOf.call(
+      bin.parentElement.parentElement.children, bin.parentElement,
+    ));
+    toDoList.removeTask(index);
+    storage.save('tasks', toDoList.taskList);
+  });
+});
+
+const reload = document.querySelector('.reload');
+reload.addEventListener('click', () => {
+  populateList(toDoList);
 });
