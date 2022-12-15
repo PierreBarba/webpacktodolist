@@ -1,15 +1,14 @@
 .titulo {
-    color: rgb(212, 19, 177);
-    background-color: rgb(59, 222, 47);
+  color: rgb(212, 19, 177);
+  background-color: rgb(59, 222, 47);
 }
 
 .graciasDios {
-    color: aquamarine;
-    background-color: yellow;
-
+  color: aquamarine;
+  background-color: yellow;
 }
 
 .esto {
-    color: blueviolet;
-    background-color: black;
+  color: blueviolet;
+  background-color: black;
 }
