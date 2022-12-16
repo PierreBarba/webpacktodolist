@@ -3,11 +3,11 @@ export default function createTaskDOM(desc) {
   newTask.setAttribute('draggable', 'true');
   newTask.className = 'task';
   newTask.innerHTML = `<input type="checkbox" class="checkbox">
-    <input class="task-description" value="${desc}">
-    <span id="trash" class="hidden">&#128465;</span>
-    </input>
-    <span id="move">&#8942;</span>
-    `;
+      <input class="task-description" value="${desc}">
+      <span id="trash" class="hidden">&#128465;</span>
+      </input>
+      <span id="move">&#8942;</span>
+      `;
   const taskCheckbox = newTask.children[0];
   taskCheckbox.addEventListener('change', () => {
     if (taskCheckbox.checked) {
