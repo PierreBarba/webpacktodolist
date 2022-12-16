@@ -21,7 +21,7 @@ function addCheckBoxListener(checkbox) {
 function populateList(emptyList) {
   emptyList.sortTasks();
   for (let i = 0; i < emptyList.taskList.length; i += 1) {
-    const temp = createTaskDOM(emptyList.taskList[i].description);
+    const temp = createTaskDOM(emptyList.taskList[i].description, emptyList.taskList[i].completed);
     taskList.appendChild(temp);
     addCheckBoxListener(temp.children[0]);
   }
@@ -35,7 +35,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const desc = form.children[0].value;
   if (!desc) return;
-  const newTaskDOM = createTaskDOM(desc);
+  const newTaskDOM = createTaskDOM(desc, false);
   taskList.appendChild(newTaskDOM);
   addCheckBoxListener(newTaskDOM.children[0]);
   form.children[0].value = '';
@@ -67,7 +67,9 @@ trashCans.forEach((bin) => {
     ));
     toDoList.removeTask(index);
     storage.save('tasks', toDoList.taskList);
+    bin.parentElement.remove();
   });
+  bin.addEventListener('mousedown', (evt) => evt.preventDefault());
 });
 
 const reload = document.querySelector('.reload');
