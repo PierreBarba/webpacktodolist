@@ -9,6 +9,21 @@ toDoList.taskList = storage.load('tasks');
 
 const taskList = document.querySelector('.to-do-list');
 
+function addtrashlistenner() {
+  const trashCans = document.querySelectorAll('#trash');
+  trashCans.forEach((bin) => {
+    bin.addEventListener('click', () => {
+      const index = (Array.prototype.indexOf.call(
+        bin.parentElement.parentElement.children, bin.parentElement,
+      ));
+      toDoList.removeTask(index);
+      storage.save('tasks', toDoList.taskList);
+      bin.parentElement.remove();
+    });
+    bin.addEventListener('mousedown', (evt) => evt.preventDefault());
+  });
+}
+
 function addCheckBoxListener(checkbox) {
   const checkboxes = document.querySelectorAll('.checkbox');
   checkbox.addEventListener('change', () => {
@@ -24,12 +39,18 @@ function populateList(emptyList) {
     const temp = createTaskDOM(emptyList.taskList[i].description, emptyList.taskList[i].completed);
     taskList.appendChild(temp);
     addCheckBoxListener(temp.children[0]);
+    temp.children[1].addEventListener('blur', () => {
+      emptyList.taskList[i].description = temp.children[1].value;
+      temp.children[3].classList.remove('hidden');
+      temp.children[2].classList.add('hidden');
+      temp.classList.toggle('focus');
+      storage.save('tasks', toDoList.taskList);
+    });
   }
 }
 
 populateList(toDoList);
 storage.save('tasks', toDoList.taskList);
-
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -43,6 +64,7 @@ form.addEventListener('submit', (e) => {
   toDoList.addTask(newTask);
   toDoList.updateTaskIndex();
   storage.save('tasks', toDoList.taskList);
+  addtrashlistenner();
 });
 
 const clearAll = document.querySelector('.clear-all');
@@ -59,18 +81,7 @@ clearAll.addEventListener('click', () => {
   storage.save('tasks', toDoList.taskList);
 });
 
-const trashCans = document.querySelectorAll('#trash');
-trashCans.forEach((bin) => {
-  bin.addEventListener('click', () => {
-    const index = (Array.prototype.indexOf.call(
-      bin.parentElement.parentElement.children, bin.parentElement,
-    ));
-    toDoList.removeTask(index);
-    storage.save('tasks', toDoList.taskList);
-    bin.parentElement.remove();
-  });
-  bin.addEventListener('mousedown', (evt) => evt.preventDefault());
-});
+addtrashlistenner();
 
 const reload = document.querySelector('.reload');
 reload.addEventListener('click', () => {

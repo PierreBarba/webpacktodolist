@@ -20,11 +20,9 @@ export default class ToDoList {
     this.taskList.push(task);
   }
 
-  
   removeTask(index) {
     this.taskList.splice(index, 1);
   }
-
 
   updateTaskIndex() {
     this.sortTasks();

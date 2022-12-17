@@ -15,22 +15,22 @@ body {
 }
 
 .list {
- z-index: -1 ;
- font-family:Verdana, sans-serif;
- text-align: center;
- color: #6495ed;
- width: 24rem;
- height: 100%;
- margin-top: 10px;
- margin-left: auto;
- margin-bottom: 18px;
- margin-right: auto;
- font-size: 2.3em;
- text-shadow:  3px 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+  color: #6495ed;
+  width: 24rem;
+  height: 100%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-bottom: 18px;
+  margin-right: auto;
+  font-size: 2.3em;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .list2 {
-  font-family:Verdana, sans-serif;
+  font-family: Verdana, sans-serif;
   text-align: center;
   color: #fff;
   width: 23.8rem;
@@ -40,8 +40,7 @@ body {
   margin-bottom: 18px;
   margin-right: auto;
   font-size: 2.3em;
- }
-
+}
 
 .to-do-container {
   background-color: #eee;
@@ -64,7 +63,7 @@ body {
 }
 
 .today-title {
-  margin: 10px 10px 10px 0px;
+  margin: 10px 10px 10px 0;
   font-size: 14px;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -89,7 +88,7 @@ body {
 }
 
 .add-task {
-  margin: 10px 10px 10px 0px;
+  margin: 10px 10px 10px 0;
   flex: 20;
   border: none;
   padding: 0.5rem 0;
@@ -131,7 +130,7 @@ body {
 }
 
 .focus {
-  background-color:rgb(164, 189, 237);
+  background-color: rgb(164, 189, 237);
 }
 
 .task > * {

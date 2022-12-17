@@ -1,6 +1,5 @@
 export default function createTaskDOM(desc, complete) {
   const newTask = document.createElement('li');
-  // newTask.setAttribute('true');
   newTask.className = 'task';
   newTask.innerHTML = `<input type="checkbox" class="checkbox">
       <input class="task-description" value="${desc}">
@@ -23,14 +22,6 @@ export default function createTaskDOM(desc, complete) {
     newTaskInput.parentElement.classList.toggle('focus');
     newTaskInput.parentElement.children[3].classList.add('hidden');
     newTaskInput.parentElement.children[2].classList.remove('hidden');
-  });
-
-  newTaskInput.addEventListener('blur', () => {
-    setTimeout(() => {
-      newTaskInput.parentElement.children[3].classList.remove('hidden');
-      newTaskInput.parentElement.children[2].classList.add('hidden');
-      newTaskInput.parentElement.classList.toggle('focus');
-    }, 100);
   });
 
   const trashButton = newTask.children[2];
