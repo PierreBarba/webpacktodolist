@@ -22,10 +22,11 @@ export default class ToDoList {
 
   removeTask(index) {
     this.taskList.splice(index, 1);
+    this.updateTaskIndex();
   }
 
   updateTaskIndex() {
-    this.sortTasks();
+    this.taskList.sort((a, b) => a.index - b.index);
     for (let i = 0; i < this.taskList.length; i += 1) {
       this.taskList[i].index = i;
     }
