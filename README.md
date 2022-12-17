@@ -30,7 +30,7 @@
 # 📖 [To Do List] <a name="Todo List"></a>
 
 
-**[Personal Portfolio Pierre]** is a...
+**[Personal Portfolio Pierre]** is a...project was developed with HTML, CSS and JAVASCRIPT, in which we use classes to be able to use various modules in separate files, we also use webpack in this project which consists of an app where you can save your tasks that you will do during the day, like this It will be easier to know what you need to do or what you should do in your day.
 
 ## 🛠 CSS,HTML,JAVASCRIPT <a name="javascript,html,css"></a>
 
