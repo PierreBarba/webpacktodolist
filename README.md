@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Capton Project] <a name="Todo List"></a>
+# 📖 [To Do List] <a name="Todo List"></a>
 
 
 **[Personal Portfolio Pierre]** is a...
@@ -52,6 +52,11 @@
 
 
 To get a local copy up and running, follow these steps.
+
+git clone ...
+cd ...
+npm install
+npm run start
 
 
 
