@@ -2,8 +2,8 @@
   * @jest-environment jsdom
  */
 
-import ToDoList from './src/modules/ToDoList.js';
-import Task from './src/modules/Task.js';
+import ToDoList from './ToDoList.js';
+import Task from './Task.js';
 
 describe('Test add and remove', () => {
   test('testing adding task', () => {
