@@ -10,7 +10,7 @@ describe('Testing edit and clear function', () => {
         const toDoList = new ToDoList();
         const task = new Task('todo 1', 0);
         toDoList.addTask(task);
-        task.getDescription('tarea 1');
+        task.setDescription ='tarea 1';
         expect(task.description).toBe('tarea 1');
     })
 });
