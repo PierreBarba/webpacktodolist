@@ -13,8 +13,7 @@ describe('Testing edit and clear function', () => {
         task.setDescription ='tarea 1';
         expect(task.description).toBe('tarea 1');
     })
-
-
+    
     test('testing complete task', () => {
         const toDoList = new ToDoList();
         let task = new Task('task 1', 0);
@@ -22,5 +21,4 @@ describe('Testing edit and clear function', () => {
         task.toggleCompleted();
         expect(toDoList.taskList[0].completed).toBeTruthy();
     })
-    
 });
